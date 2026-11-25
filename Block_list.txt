@@ -1,6 +1,6 @@
-# This blocklist helps Adguard admin restrict access to youtube and its domains.
-# Curated from sources online.     https://github.com/mcintosh109/Pi-Hole_my_blocklist
-# Last updated: 11 december 2019
+! This blocklist helps Adguard admin restrict access to youtube and its domains.
+! Curated from sources online.     https://github.com/mcintosh109/Pi-Hole_my_blocklist
+! Last updated: 11 december 2019
 
 ||youtube.com^
 ||googlevideo.com^
@@ -221,8 +221,8 @@
 ||youtubei.googleapis.com^
 ||youtube-nocookie.com^
 
-# This blocklist helps Adguard admin restrict access to Roblox and its domains.
-# Curated from sources online.
+! This blocklist helps Adguard admin restrict access to Roblox and its domains.
+! Curated from sources online.
 
 ||golden.roblox.com^
 ||us-central-bd2.roblox.com^
@@ -247,15 +247,15 @@
 ||voice.roblox.com^
 ||contacts.roblox.com^
 
-# This blocklist helps Adguard admin restrict access to netflix and its domains.
-# Curated from sources online.
+! This blocklist helps Adguard admin restrict access to netflix and its domains.
+! Curated from sources online.
 ||nflxext.com^
 ||netflix.com^
 ||nflximg.net^
 ||nflxvideo.net^
 ||nflxso.net^
 
-# ========== HULU (streaming-specific) ==========
+! ========== HULU (streaming-specific) ==========
 ||ads.hulu.com^
 ||analytics.hulu.com^
 ||tracking.hulu.com^
@@ -268,7 +268,7 @@
 ||ads.hulustream.com^
 
 
-# Manual
+! Manual
 ||disney.com^
 ||minecraft.com^
 
