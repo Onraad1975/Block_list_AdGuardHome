@@ -1,0 +1,30 @@
+alias: "ADGUARD: Youtube bloqueo/desbloqueo manual"
+description: ""
+trigger:
+  - platform: state
+    entity_id:
+      - input_boolean.youtube
+    to: null
+action:
+  - if:
+      - condition: state
+        entity_id: input_boolean.youtube
+        state: "on"
+    then:
+      - service: adguard.add_url
+        metadata: {}
+        data:
+          name: Dinertime
+          url: https://raw.githubusercontent.com/Onraad1975/Block_list_AdGuardHome/refs/heads/main/Block_list.txt
+    else:
+      - service: adguard.remove_url
+        metadata: {}
+        data:
+          url: https://raw.githubusercontent.com/Onraad1975/Block_list_AdGuardHome/refs/heads/main/Block_list.txt
+mode: single
+
+# Own list
+#   https://raw.githubusercontent.com/Onraad1975/Block_list_AdGuardHome/refs/heads/main/Block_list.txt
+
+# Working
+#   https://raw.githubusercontent.com/gieljnssns/Social-media-Blocklists/refs/heads/master/adguard-youtube.txt
