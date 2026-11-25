@@ -1,11 +1,49 @@
-alias: "ADGUARD: Youtube bloqueo/desbloqueo manual"
-description: ""
-trigger:
+- id: '1795632826210'
+  alias: Diner time active
+  description: ''
+  triggers:
+  - trigger: time
+    at: '17:15:00'
+  conditions: []
+  actions:
+  - action: input_boolean.turn_on
+    metadata: {}
+    target:
+      entity_id: input_boolean.youtube
+    data: {}
+  mode: single
+  
+  
+- id: '1795632957360'
+  alias: Diner time deactive
+  description: ''
+  triggers:
+  - trigger: time
+    at: '18:00:00'
+  conditions: []
+  actions:
+  - action: input_boolean.turn_off
+    metadata: {}
+    target:
+      entity_id: input_boolean.youtube
+    data: {}
+  mode: single
+
+
+# Own list
+#   https://raw.githubusercontent.com/Onraad1975/Block_list_AdGuardHome/refs/heads/main/Block_list.txt
+
+# Working
+#   https://raw.githubusercontent.com/gieljnssns/Social-media-Blocklists/refs/heads/master/adguard-youtube.txt
+- id: Adguard control
+  alias: "ADGUARD: Youtube bloqueo/desbloqueo manual"
+  description: ""
+  trigger:
   - platform: state
     entity_id:
       - input_boolean.youtube
     to: null
-action:
+  action:
   - if:
       - condition: state
         entity_id: input_boolean.youtube
@@ -21,10 +59,4 @@ action:
         metadata: {}
         data:
           url: https://raw.githubusercontent.com/Onraad1975/Block_list_AdGuardHome/refs/heads/main/Block_list.txt
-mode: single
-
-# Own list
-#   https://raw.githubusercontent.com/Onraad1975/Block_list_AdGuardHome/refs/heads/main/Block_list.txt
-
-# Working
-#   https://raw.githubusercontent.com/gieljnssns/Social-media-Blocklists/refs/heads/master/adguard-youtube.txt
+  mode: single
