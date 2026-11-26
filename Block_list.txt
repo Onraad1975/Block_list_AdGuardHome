@@ -256,6 +256,6 @@
 ||adserver.hulu.com^
 ||huluadsmgmt.com^
 ||ads.hulustream.com^
-||disney.com^
+||disneyplus.com^
 ||minecraft.com^
 
