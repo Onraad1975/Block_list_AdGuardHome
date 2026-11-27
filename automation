@@ -3,7 +3,7 @@
   description: ''
   triggers:
   - trigger: time
-    at: '17:15:00'
+    at: '17:00:00'
   conditions: []
   actions:
   - action: input_boolean.turn_on
@@ -36,7 +36,7 @@
 # Working
 #   https://raw.githubusercontent.com/gieljnssns/Social-media-Blocklists/refs/heads/master/adguard-youtube.txt
 - id: Adguard control
-  alias: "ADGUARD: Youtube bloqueo/desbloqueo manual"
+  alias: "ADGUARD: Enable/Disable Blocklist"
   description: ""
   trigger:
   - platform: state
@@ -49,13 +49,13 @@
         entity_id: input_boolean.youtube
         state: "on"
     then:
-      - service: adguard.add_url
+      - service: adguard.enable_url
         metadata: {}
         data:
           name: Dinertime
           url: https://raw.githubusercontent.com/Onraad1975/Block_list_AdGuardHome/refs/heads/main/Block_list.txt
     else:
-      - service: adguard.remove_url
+      - service: adguard.disable_url
         metadata: {}
         data:
           url: https://raw.githubusercontent.com/Onraad1975/Block_list_AdGuardHome/refs/heads/main/Block_list.txt
